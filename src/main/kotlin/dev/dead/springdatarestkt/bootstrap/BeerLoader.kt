@@ -101,7 +101,7 @@ class BeerLoader(private val beerRepository: BeerRepository) {
         )
 
         beerRepository.saveAllAndFlush(beers)
-        // If repository is JpaRepository, the transaction will be committed when this method returns.
+        // If the repository is JpaRepository, the transaction will be committed when this method returns.
         val afterCount = beerRepository.count()
         log.debug("Initial load finished. new count = {}", afterCount)
     }
